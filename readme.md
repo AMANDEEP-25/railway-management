@@ -25,13 +25,17 @@ A Node.js/Express backend for railway ticket booking system with real-time seat 
 
 ```
 git clone https://github.com/yourusername/irctc-backend.git
+```
 
+2. Install dependencies:
 
-Install dependencies:
+```
     npm install
+```
 
-Database Setup:
+3. Database Setup:
 
+```
     Create PostgreSQL database
     Run these SQL commands:
 
@@ -59,9 +63,11 @@ Database Setup:
     booked_seats INTEGER NOT NULL DEFAULT 1,
     booking_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
     );
+```
 
-Create .env file:
+4. Create .env file:
 
+```
     PORT=3000
     DB_HOST=localhost
     DB_USER=postgres
@@ -69,9 +75,11 @@ Create .env file:
     DB_NAME=irctc
     JWT_SECRET=your_jwt_secret
     ADMIN_API_KEY=your_admin_api_key
+```
 
-Start the server:
+5. Start the server:
 
+```
     npm start
 ```
 
