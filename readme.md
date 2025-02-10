@@ -23,7 +23,7 @@ A Node.js/Express backend for railway ticket booking system with real-time seat 
 
 1. Clone the repository:
 
-```bash
+```
 git clone https://github.com/yourusername/irctc-backend.git
 
 
@@ -74,3 +74,11 @@ Start the server:
 
     npm start
 ```
+
+## Testing with Hoppscotch
+
+Register User:
+
+    POST http://localhost:3000/api/auth/register
+    Body: { "name": "John", "email": "john@test.com", "password": "password123" }
+    ![alt text](screenshots/register.png)
