@@ -77,8 +77,84 @@ Start the server:
 
 ## Testing with Hoppscotch
 
-Register User:
+### Register User:
 
     POST http://localhost:3000/api/auth/register
-    Body: { "name": "John", "email": "john@test.com", "password": "password123" }
-    ![alt text](screenshots/register.png)
+    Body: {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "password": "password123"
+        }
+
+![alt text](screenshots/register.png)
+
+### Login User
+
+    POST http://localhost:3000/api/auth/login
+
+    Body:
+
+    {
+    "email": "john@example.com",
+    "password": "password123"
+    }
+
+![alt text](screenshots/login.png)
+
+### Add a New Train (Admin)
+
+    POST http://localhost:3000/api/trains
+
+    Headers:
+        x-api-key: your_admin_api_key
+
+    Body:
+        {
+        "name": "Express 123",
+        "source": "Mumbai",
+        "destination": "Delhi",
+        "total_seats": 50
+        }
+
+![alt text](screenshots/addTrain.png)
+
+### Get Seat Availability
+
+    GET http://localhost:3000/api/trains/availability?source=Mumbai&destination=Delhi
+
+### Book a Seat
+
+    POST http://localhost:3000/api/bookings
+
+    Headers:
+        Authorization: Bearer <token_from_login>
+
+    Body:
+        {
+        "train_id": 1
+        }
+
+![alt text](screenshots/bookingATrain.png)
+
+### Get Booking Details
+
+    GET http://localhost:3000/api/bookings/1
+
+    Headers:
+        Authorization: Bearer <token_from_login>
+
+![alt text](screenshots/getBookingDetails.png)
+
+### Update Train Seats (Admin)
+
+    PUT http://localhost:3000/api/trains/1
+
+    Headers:
+        x-api-key: your_admin_api_key
+
+    Body:
+        {
+        "total_seats": 60
+        }
+
+![alt text](screenshots/UpdateTrainSeats.png)
