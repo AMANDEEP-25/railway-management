@@ -118,9 +118,17 @@ Start the server:
 
 ![alt text](screenshots/addTrain.png)
 
+### List All Trains
+
+    GET http://localhost:3000/api/trains
+
+![alt text](screenshots/getAllTrain.png)
+
 ### Get Seat Availability
 
     GET http://localhost:3000/api/trains/availability?source=Mumbai&destination=Delhi
+
+![alt text](screenshots/getSpecificTrain.png)
 
 ### Book a Seat
 
