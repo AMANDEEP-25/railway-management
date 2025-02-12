@@ -72,7 +72,7 @@ app.post("/api/auth/login", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
-// Get all trains (any route)
+
 app.get("/api/trains", async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM trains");
